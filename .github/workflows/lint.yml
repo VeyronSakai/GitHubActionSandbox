@@ -11,21 +11,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      github: ${{ (github.event_name == 'pull_request' && steps.filter.outputs.github) || github.event_name == 'push' }}
+    steps:
+      - uses: dorny/paths-filter@v3
+        if: ${{ github.event_name == 'pull_request' }}
+        id: filter
+        with:
+          filters: |
+            github:
+              - ".github/**"
+
   actionlint:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.github == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            github:
-              - ".github/**"
       - uses: reviewdog/action-actionlint@v1
-        if: ${{ steps.filter.outputs.github == 'true' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review

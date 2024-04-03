@@ -3,18 +3,18 @@ on:
   workflow_dispatch:
     inputs:
       parameters:
-        description: "Parameters JSON"
+        description: "JSON Parameters"
         required: true
         default: '{
-          "param1": "Paramter 1",
-          "param2": "Paramter 2",
-          "param3": "Paramter 3",
-          "param4": "Paramter 4",
-          "param5": "Paramter 5",
-          "param6": "Paramter 6",
-          "param7": "Paramter 7",
-          "param8": "Paramter 8",
-          "param9": "Paramter 9",
+          "param01": "Paramter 1",
+          "param02": "Paramter 2",
+          "param03": "Paramter 3",
+          "param04": "Paramter 4",
+          "param05": "Paramter 5",
+          "param06": "Paramter 6",
+          "param07": "Paramter 7",
+          "param08": "Paramter 8",
+          "param09": "Paramter 9",
           "param10": "Paramter 10",
           "param11": "Paramter 11",
           "param12": "Paramter 12",
@@ -34,15 +34,15 @@ jobs:
     steps:
       - name: Echo parameters
         run: |
-          echo ${{ fromJson(inputs.parameters).param1 }}
-          echo ${{ fromJson(inputs.parameters).param2 }}
-          echo ${{ fromJson(inputs.parameters).param3 }}
-          echo ${{ fromJson(inputs.parameters).param4 }}
-          echo ${{ fromJson(inputs.parameters).param5 }}
-          echo ${{ fromJson(inputs.parameters).param6 }}
-          echo ${{ fromJson(inputs.parameters).param7 }}
-          echo ${{ fromJson(inputs.parameters).param8 }}
-          echo ${{ fromJson(inputs.parameters).param9 }}
+          echo ${{ fromJson(inputs.parameters).param01 }}
+          echo ${{ fromJson(inputs.parameters).param02 }}
+          echo ${{ fromJson(inputs.parameters).param03 }}
+          echo ${{ fromJson(inputs.parameters).param04 }}
+          echo ${{ fromJson(inputs.parameters).param05 }}
+          echo ${{ fromJson(inputs.parameters).param06 }}
+          echo ${{ fromJson(inputs.parameters).param07 }}
+          echo ${{ fromJson(inputs.parameters).param08 }}
+          echo ${{ fromJson(inputs.parameters).param09 }}
           echo ${{ fromJson(inputs.parameters).param10 }}
           echo ${{ fromJson(inputs.parameters).param11 }}
           echo ${{ fromJson(inputs.parameters).param12 }}

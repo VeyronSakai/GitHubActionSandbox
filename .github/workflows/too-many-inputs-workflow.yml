@@ -1,4 +1,4 @@
-name: ManyInputsWorkflow
+name: TooManyInputsWorkflow
 on:
   workflow_dispatch:
     inputs:

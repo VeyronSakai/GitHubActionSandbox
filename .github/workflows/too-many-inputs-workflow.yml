@@ -1,0 +1,66 @@
+name: TooManyInputsWorkflow
+on:
+  workflow_dispatch:
+    inputs:
+      param1:
+        type: string
+        default: "param1"
+        description: "Parameter 1"
+      param2:
+        type: string
+        default: "param2"
+        description: "Parameter 2"
+      param3:
+        type: string
+        default: "param3"
+        description: "Parameter 3"
+      param4:
+        type: string
+        default: "param4"
+        description: "Parameter 4"
+      param5:
+        type: string
+        default: "param5"
+        description: "Parameter 5"
+      param6:
+        type: string
+        default: "param6"
+        description: "Parameter 6"
+      param7:
+        type: string
+        default: "param7"
+        description: "Parameter 7"
+      param8:
+        type: string
+        default: "param8"
+        description: "Parameter 8"
+      param9:
+        type: string
+        default: "param9"
+        description: "Parameter 9"
+      param10:
+        type: string
+        default: "param10"
+        description: "Parameter 10"
+      param11:
+        type: string
+        default: "param11"
+        description: "Parameter 11"
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo parameters
+        run: |
+          echo "param1: ${{ github.event.inputs.param1 }}"
+          echo "param2: ${{ github.event.inputs.param2 }}"
+          echo "param3: ${{ github.event.inputs.param3 }}"
+          echo "param4: ${{ github.event.inputs.param4 }}"
+          echo "param5: ${{ github.event.inputs.param5 }}"
+          echo "param6: ${{ github.event.inputs.param6 }}"
+          echo "param7: ${{ github.event.inputs.param7 }}"
+          echo "param8: ${{ github.event.inputs.param8 }}"
+          echo "param9: ${{ github.event.inputs.param9 }}"
+          echo "param10: ${{ github.event.inputs.param10 }}"
+          echo "param11: ${{ github.event.inputs.param11 }}"

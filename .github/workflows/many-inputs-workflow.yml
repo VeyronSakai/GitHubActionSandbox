@@ -41,7 +41,11 @@ on:
       param10:
         type: string
         default: "param10"
-        description: "Parameter 10"                
+        description: "Parameter 10"
+      param11:
+        type: string
+        default: "param11"
+        description: "Parameter 11"
 
 jobs:
   main:
@@ -59,4 +63,4 @@ jobs:
           echo "param8: ${{ github.event.inputs.param8 }}"
           echo "param9: ${{ github.event.inputs.param9 }}"
           echo "param10: ${{ github.event.inputs.param10 }}"
- 
+          echo "param11: ${{ github.event.inputs.param11 }}"

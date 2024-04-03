@@ -1,0 +1,26 @@
+name: SimpleGamaSandbox
+on:
+  workflow_dispatch:
+    inputs:
+      param1:
+        type: string
+        default: "param1"
+        description: "Parameter 1"
+      param2:
+        type: string
+        default: "param2"
+        description: "Parameter 2"
+      param3:
+        type: string
+        default: "param3"
+        description: "Parameter 3"
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo parameters
+        run: |
+          echo "param1: ${{ github.event.inputs.param1 }}"
+          echo "param2: ${{ github.event.inputs.param2 }}"
+          echo "param3: ${{ github.event.inputs.param3 }}"
